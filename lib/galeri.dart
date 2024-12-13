@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
-class GaleriPage extends StatelessWidget {
+class GaleriPage extends StatefulWidget {
   const GaleriPage({super.key});
 
   @override
+  State<GaleriPage> createState() => _GaleriPageState();
+}
+
+class _GaleriPageState extends State<GaleriPage> {
+  List isFavorit = List.generate(
+    12,
+    (index) => false,
+  );
+  @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 2),
+      padding: const EdgeInsets.symmetric(horizontal: 2),
       itemCount: 12,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisSpacing: 2, crossAxisSpacing: 2, crossAxisCount: 2),
@@ -26,9 +35,18 @@ class GaleriPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text('Gambar $index'),
-                Icon(
-                  Icons.favorite,
-                  color: Colors.pink,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isFavorit[index] = !isFavorit[index];
+                    });
+                  },
+                  child: isFavorit[index]
+                      ? const Icon(Icons.favorite, color: Colors.red)
+                      : const Icon(
+                          Icons.favorite_border,
+                          color: Colors.black,
+                        ),
                 ),
               ],
             ),

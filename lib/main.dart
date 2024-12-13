@@ -66,10 +66,10 @@ class HomePage extends StatelessWidget {
       itemCount: 8,
       itemBuilder: (context, index) => ListTile(
         trailing: Text('12.0$index'),
-        leading: CircleAvatar(
+        leading: const CircleAvatar(
           foregroundImage: NetworkImage('https://picsum.photos/id/4/200'),
         ),
-        title: Text('Samiya'),
+        title: const Text('Samiya'),
         subtitle: Text('Pinjam dulu ${index + 1}00 kk besok ganti'),
       ),
     );
