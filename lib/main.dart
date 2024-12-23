@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/galeri.dart';
+import 'package:myapp/toko.dart';
 
 void main() {
   runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
           style: TextStyle(color: Colors.green),
         ),
       ),
-      body: [const HomePage(), const GaleriPage()][halSaatIni],
+      body: [const HomePage(), const GaleriPage(),const TokoPage()][halSaatIni],
     );
   }
 }
