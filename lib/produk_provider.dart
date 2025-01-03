@@ -11,6 +11,7 @@ class Produk {
   final String image;
   final num rate;
   final int count;
+
   Produk({
     required this.id,
     required this.title,
@@ -40,8 +41,20 @@ Future<List<Produk>> ambilProduk() async {
   final respon = await http.get(Uri.parse('https://fakestoreapi.com/products'));
   if (respon.statusCode == 200) {
     final List<dynamic> data = jsonDecode(respon.body);
-    final List<Produk> listProduk = data.map((e) => Produk.fromJson(e)).toList();
+    final List<Produk> listProduk =
+        data.map((e) => Produk.fromJson(e)).toList();
     return listProduk;
+  } else {
+    throw Exception('gagal ambil data dari api');
+  }
+}
+
+Future<List<String>> ambilKategori() async {
+  final respon =
+      await http.get(Uri.parse('https://fakestoreapi.com/products/categories'));
+  if (respon.statusCode == 200) {
+    final List<dynamic> data = jsonDecode(respon.body);
+    return List<String>.from(data);
   } else {
     throw Exception('gagal ambil data dari api');
   }
