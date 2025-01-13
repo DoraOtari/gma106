@@ -1,8 +1,8 @@
-erika 15
+erika 20
 nindy 5
-zami 5
-wharnsby 5
+zami 13
+wharnsby 16
 amir 5
 samiya 5
 rana 5
-rara 5
+rara 8

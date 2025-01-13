@@ -74,8 +74,6 @@ class TampilanProduk extends StatelessWidget {
               final Produk produk = listProduk[index];
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                // bungkus Column dengan GestureDetector
-                // tambah properti onTap -> Navigator.push
                 child: GestureDetector(
                   onTap: () => Navigator.push(
                       context,

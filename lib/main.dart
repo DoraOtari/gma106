@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/galeri.dart';
+import 'package:myapp/keranjang.dart';
 import 'package:myapp/toko.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
+  runApp(ChangeNotifierProvider(
+      create: (context) => Keranjang(),
+      child:
+          const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp())));
 }
 
 class MyApp extends StatefulWidget {
@@ -51,7 +56,11 @@ class _MyAppState extends State<MyApp> {
           style: TextStyle(color: Colors.green),
         ),
       ),
-      body: [const HomePage(), const GaleriPage(),const TokoPage()][halSaatIni],
+      body: [
+        const HomePage(),
+        const GaleriPage(),
+        const TokoPage()
+      ][halSaatIni],
     );
   }
 }
