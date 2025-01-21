@@ -8,6 +8,7 @@ class Keranjang extends ChangeNotifier {
   List<Produk> _listProduk = [];
   List<Produk> get listProduk => _listProduk;
   int get jmlKeranjang => _listProduk.length;
+  num get hitungTotal => _totalBayar();
 
   Keranjang() {
     _getKeranjang();
@@ -29,5 +30,18 @@ class Keranjang extends ChangeNotifier {
   Future<void> tambahKeranjang(Produk produk) async {
     _listProduk.add(produk);
     notifyListeners();
+  }
+
+  Future<void> hapusProduk(int id) async {
+    _listProduk.removeWhere((element) => element.id == id);
+    notifyListeners();
+  }
+
+  num _totalBayar() {
+    num total = 0;
+    for (var element in _listProduk) {
+      total += element.price;
+    }
+    return total;
   }
 }

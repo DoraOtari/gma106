@@ -8,7 +8,8 @@ void main() {
   runApp(ChangeNotifierProvider(
       create: (context) => Keranjang(),
       child:
-          const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp())));
+          const MaterialApp(
+            debugShowCheckedModeBanner: false, home: MyApp())));
 }
 
 class MyApp extends StatefulWidget {

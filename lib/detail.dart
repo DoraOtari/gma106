@@ -45,7 +45,7 @@ class DetailPage extends StatelessWidget {
                 child: const Icon(Icons.shopping_bag))),
       ]),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,7 +56,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               padding: const EdgeInsets.all(3),
               decoration: BoxDecoration(
                   color: Colors.pink, borderRadius: BorderRadius.circular(8)),
@@ -88,7 +88,7 @@ class DetailPage extends StatelessWidget {
                       Icons.star,
                       color: Colors.amber,
                     ),
-                    Text('(${produk.rate})', style: TextStyle(fontSize: 18))
+                    Text('(${produk.rate})', style: const TextStyle(fontSize: 18))
                   ],
                 ),
               ],
